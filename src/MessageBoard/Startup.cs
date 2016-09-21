@@ -21,6 +21,7 @@ namespace MessageBoard
         }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddEntityFramework()
                 .AddDbContext<MessageBoardDbContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
@@ -28,6 +29,12 @@ namespace MessageBoard
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Home}/{action=index}/{id?}");
+            });
 
             app.Run(async (context) =>
             {

@@ -6,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using MessageBoard.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MessageBoard
 {
@@ -36,10 +40,7 @@ namespace MessageBoard
                     template: "{controller=Home}/{action=index}/{id?}");
             });
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            
         }
     }
 }

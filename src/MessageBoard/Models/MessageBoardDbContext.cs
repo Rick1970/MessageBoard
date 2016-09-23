@@ -8,16 +8,21 @@ namespace MessageBoard.Models
 {
     public class MessageBoardDbContext : DbContext
     {
-        public DbSet<Post> Posts { get; set; }
-        public DbSet<Comment> Comments { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
 
         public MessageBoardDbContext(DbContextOptions<MessageBoardDbContext> options)
             :base(options)
         {
         }
-        protected override void OnModelCreating(ModelBuilder builder)
+
+        public MessageBoardDbContext()
         {
-            base.OnModelCreating(builder);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MessageBoard;integrated security=True");
         }
     }
 }

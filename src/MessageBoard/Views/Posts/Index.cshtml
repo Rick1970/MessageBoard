@@ -1,0 +1,17 @@
+﻿@model IEnumerable<MessageBoard.Models.Post>
+
+<html>
+<head>
+    <title>Current Post</title>
+</head>
+<body>
+    <h2>Current Post:</h2>
+
+    <ul>
+        @foreach (var listItem in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => listItem.Author)</li>
+        }
+    </ul>
+</body>
+</html>

@@ -1,14 +1,16 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IEnumerable <MessageBoard.Models.Post>
 
 <html>
 <head>
-    <title>To Do List</title>
+    <title>Current Post</title>
 </head>
 <body>
-    <h2>Welcome to the To the message board!</h2>
+    <h4>@Html.DisplayNameFor(model => model.Author)</h4>
+    <ul>
+        @foreach (var listItem in Model)
+        {
+            <li>@Html.DisplayFor(modelItem => listItem.Message) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
+        }
+    </ul>
 </body>
 </html>

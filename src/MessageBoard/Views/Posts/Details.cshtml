@@ -2,12 +2,12 @@
 
 <html>
 <head>
-    <title>Current Post:</title>
+    <title>Post - Details</title>
 </head>
 <body>
     <h2>Details</h2>
     <hr />
-    @Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Message)
-    <p>@Html.ActionLink("Back to list", "Index")</p>
+    @Html.DisplayNameFor(model => model.Message): @Html.DisplayFor(model => model.Message)
+    <p>@Html.ActionLink("Back to post", "Index")</p>
 </body>
 </html>

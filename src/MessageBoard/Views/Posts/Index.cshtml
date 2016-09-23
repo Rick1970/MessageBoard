@@ -1,16 +1,16 @@
-﻿@model IEnumerable<MessageBoard.Models.Post>
+﻿@model IEnumerable <MessageBoard.Models.Post>
 
 <html>
 <head>
-    <title>Current Post</title>
+    <title>To Do List</title>
 </head>
 <body>
-    <h2>Current Post:</h2>
-
+    <h2>To Do List</h2>
+    <h4>@Html.DisplayNameFor(model => model.Author)</h4>
     <ul>
         @foreach (var listItem in Model)
         {
-            <li>@Html.DisplayFor(modelItem => listItem.Author)</li>
+            <li>@Html.DisplayFor(modelItem => listItem.Author) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
         }
     </ul>
 </body>

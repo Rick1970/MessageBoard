@@ -1,17 +1,16 @@
-﻿@model IEnumerable <MessageBoard.Models.Post>
+﻿@{
+    ViewData["Title"] = "Message Board";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<MessageBoard.Models.Post>
 
-<html>
-<head>
-    <title>To Do List</title>
-</head>
-<body>
-    <h2>To Do List</h2>
-    <h4>@Html.DisplayNameFor(model => model.Author)</h4>
-    <ul>
-        @foreach (var listItem in Model)
-        {
-            <li>@Html.DisplayFor(modelItem => listItem.Author) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
-        }
-    </ul>
-</body>
-</html>
+
+<h2>Post:</h2>
+<hr />
+<h4>@Html.DisplayNameFor(model => model.Author)</h4>
+<ul>
+    @foreach (var listItem in Model)
+    {
+        <li>@Html.DisplayFor(modelItem => listItem.Author) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
+    }
+</ul>

@@ -1,16 +1,7 @@
-﻿@model IEnumerable <MessageBoard.Models.Post>
+﻿@{
+    ViewData["Title"] = "Message Board";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
 
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    <h4>@Html.DisplayNameFor(model => model.Author)</h4>
-    <ul>
-        @foreach (var listItem in Model)
-        {
-            <li>@Html.DisplayFor(modelItem => listItem.Message) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
-        }
-    </ul>
-</body>
-</html>
+
+   <h1>Welcome to Pay it forward!!</h1>

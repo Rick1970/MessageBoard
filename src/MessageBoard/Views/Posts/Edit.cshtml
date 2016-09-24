@@ -7,14 +7,14 @@
 <body>
     <h2>Edit</h2>
     <hr />
-    <h4>Edit this task: @Html.DisplayFor(model => model.Author)</h4>
+    <h4>Edit this task: @Html.DisplayFor(model => model.Title)</h4>
 
     @using (Html.BeginForm())
     {
         @Html.HiddenFor(model => model.PostId)
 
-        @Html.LabelFor(model => model.Author)
-        @Html.EditorFor(model => model.Author)
+        @Html.LabelFor(model => model.Title)
+        @Html.EditorFor(model => model.Title)
         @Html.LabelFor(model => model.Message)
         @Html.EditorFor(model => model.Message)
         <input type="submit" value="Save" />

@@ -12,7 +12,7 @@ namespace MessageBoard.Models
     {
         [Key]
         public int PostId { get; set; }
-        public string Author { get; set; }
+        public string Title { get; set; }
         public string Message { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }

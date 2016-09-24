@@ -13,7 +13,6 @@ namespace MessageBoard.Models
         [Key]
         public int CommentId { get; set; }
         public string Response { get; set; }
-        public string Author { get; set; }
         public int PostId { get; set; }
         public virtual Post Post { get; set; }
     }

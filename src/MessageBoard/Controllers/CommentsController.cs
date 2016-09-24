@@ -24,7 +24,7 @@ namespace MessageBoard.Controllers
         }
         public IActionResult Create()
         {
-            ViewBag.PostsId = new SelectList(db.Posts, "PostId", "Name");
+            ViewBag.PostsId = new SelectList(db.Posts, "PostId", "Response");
             return View();
         }
 
@@ -38,7 +38,7 @@ namespace MessageBoard.Controllers
         public IActionResult Edit(int id)
         {
             var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
-            ViewBag.PostId = new SelectList(db.Posts, "PostId", "Name");
+            ViewBag.PostId = new SelectList(db.Posts, "PostId", "Response");
             return View(thisComment);
         }
 

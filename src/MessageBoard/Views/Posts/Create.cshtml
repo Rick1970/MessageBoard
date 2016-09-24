@@ -4,13 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@{@model MessageBoard.Models.Post
+@model MessageBoard.Models.Post
 
     
     
         <h2>Create</h2>
         <hr />
-        <h4>Add a new task</h4>
+        <h4>Add a new post:</h4>
         @using (Html.BeginForm())
         {
             @Html.LabelFor(model => model.Author)

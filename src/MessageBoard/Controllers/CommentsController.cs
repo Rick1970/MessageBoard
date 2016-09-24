@@ -1,63 +1,65 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MessageBoard.Models;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MessageBoard.Controllers
 {
-    public class PostsController : Controller
+    public class CommentsController : Controller
     {
         private MessageBoardDbContext db = new MessageBoardDbContext();
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View(db.Posts.ToList());
+            return View(db.Comments.Include(comments => comments.Post).ToList());
         }
         public IActionResult Details(int id)
         {
-            var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
-            return View(thisPost);
+            var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            return View(thisComment);
 
         }
         public IActionResult Create()
         {
+            ViewBag.PostsId = new SelectList(db.Posts, "PostId", "Name");
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Post post)
+        public IActionResult Create(Comment comment)
         {
-            db.Posts.Add(post);
+            db.Comments.Add(comment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Edit(int id)
         {
-            var thisPost = db.Posts.FirstOrDefault(items => items.PostId == id);
-            return View(thisPost);
+            var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            ViewBag.PostId = new SelectList(db.Posts, "PostId", "Name");
+            return View(thisComment);
         }
 
         [HttpPost]
-        public IActionResult Edit(Post post)
+        public IActionResult Edit(Comment comment)
         {
-            db.Entry(post).State = EntityState.Modified;
+            db.Entry(comment).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult Delete(int id)
         {
-            var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
-            return View(thisPost);
+            var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            return View(thisComment);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirmed(int id)
         {
-            var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
-            db.Posts.Remove(thisPost);
+            var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            db.Comments.Remove(thisComment);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

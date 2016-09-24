@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Message Board";
+    ViewData["Title"] = "Posts - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model IEnumerable<MessageBoard.Models.Post>
@@ -8,9 +8,11 @@
 <h2>Post:</h2>
 <hr />
 <h4>@Html.DisplayNameFor(model => model.Author)</h4>
+
 <ul>
     @foreach (var listItem in Model)
     {
         <li>@Html.DisplayFor(modelItem => listItem.Author) | @Html.ActionLink("Details", "Details", new { id = listItem.PostId })</li>
     }
 </ul>
+<p>@Html.ActionLink("Add new item", "Create")</p>

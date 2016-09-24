@@ -20,5 +20,17 @@ namespace MessageBoard.Controllers
             return View(thisPost);
 
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Post post)
+        {
+            db.Posts.Add(post);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

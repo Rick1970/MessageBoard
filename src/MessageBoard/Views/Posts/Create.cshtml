@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Item - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{@model MessageBoard.Models.Post
+
+    
+    
+        <h2>Create</h2>
+        <hr />
+        <h4>Add a new task</h4>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(model => model.Author)
+            @Html.TextBoxFor(model => model.Author)
+            @Html.LabelFor(model => model.Message)
+            @Html.TextBoxFor(model => model.Message)
+            <input type="submit" value="Add new post" />
+        }
+        <p>@Html.ActionLink("Back to list", "Index")</p>
+  

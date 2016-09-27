@@ -1,4 +1,11 @@
-﻿@model MessageBoard.Models.Post
+﻿
+@model MessageBoard.Models.Post
+@{
+    ViewData["Title"] = "Message Board";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
 
 <html>
 <head>
@@ -9,8 +16,9 @@
     <hr />
     @Html.DisplayNameFor(model => model.Title): @Html.DisplayFor(model => model.Title)
     @Html.DisplayNameFor(model => model.Message): @Html.DisplayFor(model => model.Message)
+   
 
 
-    <p>@Html.ActionLink("Back to post", "Index")</p>
+ <p>@Html.ActionLink("Back to post", "Index")</p>
 </body>
 </html>

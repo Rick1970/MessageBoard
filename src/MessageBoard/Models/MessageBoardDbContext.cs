@@ -8,13 +8,16 @@ namespace MessageBoard.Models
 {
     public class MessageBoardDbContext : DbContext
     {
+
+        public MessageBoardDbContext(DbContextOptions<MessageBoardDbContext> options)
+           : base(options)
+        {
+        }
+
         public virtual DbSet<Post> Posts { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
 
-        public MessageBoardDbContext(DbContextOptions<MessageBoardDbContext> options)
-            :base(options)
-        {
-        }
+       
 
         public MessageBoardDbContext()
         {

@@ -18,8 +18,9 @@ namespace MessageBoard.Controllers
         }
         public IActionResult Details(int id)
         {
-            var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
-            return View(thisComment);
+            //var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+            return View(db.Comments.Include(comments => comments.Post).ToList());
+            //return View(thisComment);
 
         }
         public IActionResult Create()

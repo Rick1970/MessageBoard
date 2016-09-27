@@ -1,0 +1,66 @@
+﻿body {
+  background-image:
+    url("https://j.gifs.com/jR1XWl.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+h1 {
+  color: white;
+  font-size: 4em;
+  text-align: center;
+  font-family: 'David Libre', serif;
+  margin-top: 100px;
+  letter-spacing: .50em;
+
+}
+
+.ghost-button-full-color {
+  font-family: 'David Libre', serif;
+  width: 500px;
+  padding: 8px;
+  color: #fff;
+  background-color: transparent;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  transition: color 0.3s ease-out,
+              background-color 0.3s ease-out,
+              border-color 0.3s ease-out;
+}
+.ghost-button-full-color:hover,
+.ghost-button-full-color:active {
+
+  text-shadow: 0px 0px 28px #ebdfeb;
+  -webkit-box-shadow: 3px 0px 30px #300c30;
+  -moz-box-shadow: 3px 0px 30px #300c30;
+  box-shadow: 3px 0px 30px #300c30;
+  color: #fff;
+  transition: color 0.5s ease-in,
+              background-color 0.5s ease-in,
+              border-color 0.5s ease-in;
+}
+
+.navbar-custom {
+    padding: 15px 15px;
+    height: 80px;
+    border: none;
+    background-color: #120E06;
+    font-family: 'Audiowide', cursive;
+
+}
+
+
+.navbar-default .navbar-brand {
+  font-size: 3em;
+  /*background-color: black;
+  color: #4A0F0F;*/
+
+}
+
+li {
+     font-family: 'David Libre', serif;
+     font-size: 2em;
+}
+

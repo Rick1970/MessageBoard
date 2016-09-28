@@ -34,7 +34,7 @@ namespace MessageBoard.Controllers
         {
             db.Comments.Add(comment);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("../../posts");
         }
         public IActionResult Edit(int id)
         {

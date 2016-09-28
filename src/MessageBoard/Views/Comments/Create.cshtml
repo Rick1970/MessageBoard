@@ -4,18 +4,23 @@
     ViewData["Title"] = "Item - Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Make a comment.</h2>
+<h2 class="cool">Make a comment.</h2>
 <hr />
+<div class="form-group">
+    
+        @using (Html.BeginForm())
+        {
+            <div class="cool">
+                @Html.LabelFor(model => model.Response)
+            </div>
+            @Html.EditorFor(model => model.Response, new { @class = "form-control" })
+            <div class="cool">
+                @Html.LabelFor(model => model.PostId, "Choose a post to respond to:")
+             </div>
+                @Html.DropDownList("PostId")
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(model => model.Response)
-    @Html.EditorFor(model => model.Response)
-
-    @Html.LabelFor(model => model.PostId)
-    @Html.DropDownList("PostId")
-
-    <input type="submit" value="Create" class="btn btn-default" />
-}
-
-<a href="../../posts">Click here to return to posts.</a>
+                <input type="submit" value="Create" class="btn btn-default" />
+                }
+            </div>
+    
+        <a href="../../posts">Click here to return to posts.</a>

@@ -26,9 +26,6 @@ namespace MessageBoard.Controllers
 
         public IActionResult Details(int id)
         {
-           //var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
-            //return View(db.Posts.Include(posts => posts.Comments).Where(posts => posts.PostId == id).ToList());
-            //return View(thisPost.Comments);
             var model = new PostsViewModel();
             model.Posts = db.Posts.FirstOrDefault(post => post.PostId == id);
             model.Comments = db.Comments.Include(comments => comments.Post).Where(posts => posts.PostId == id).ToList();

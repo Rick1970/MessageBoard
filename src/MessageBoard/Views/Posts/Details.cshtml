@@ -9,25 +9,31 @@
 <head>
     <title>Post - Details</title>
 </head>
-<body>
-    <h2 class="cool">Details</h2>
-    <hr />
-   
-    @Html.DisplayNameFor(model => model.Posts.Title): @Html.DisplayFor(model => model.Posts.Title)
-    @Html.DisplayNameFor(model => model.Posts.Message): @Html.DisplayFor(model => model.Posts.Message)
-   
-   
-    @foreach (var listComment in Model.Comments)
-    {
-        <li>@Html.DisplayFor(modelComment => listComment.Response)</li>
-    }
+<
+    <body>
+        
+        <h2 class="cool">Details</h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <div class="cool2">
+                    @Html.DisplayNameFor(model => model.Posts.Title):<br /> @Html.DisplayFor(model => model.Posts.Title)
+                    <br />
 
+                    @Html.DisplayNameFor(model => model.Posts.Message):<br /> @Html.DisplayFor(model => model.Posts.Message)
+                </div>
+                <h3 class="cool">Comments:</h3>
+                <ul>
+                    @foreach (var listComment in Model.Comments)
+            {
+                        <li>@Html.DisplayFor(modelComment => listComment.Response)</li>
+                    }
+                </ul>
 
-   
-   
+                <p>@Html.ActionLink("Back to post", "Index")</p>
+                <div class="col-md-6">
 
-
-
- <p>@Html.ActionLink("Back to post", "Index")</p>
+                </div>
+        </div>
 </body>
 </html>

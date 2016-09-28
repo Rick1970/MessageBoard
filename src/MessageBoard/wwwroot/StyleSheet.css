@@ -73,5 +73,12 @@ li {
 .cool {
     margin-right: 10%;
     color: white;
+    font-family: 'David Libre', serif;
 }
 
+.cool2 {
+    font-family: 'David Libre', serif;
+     font-size: 2em;
+     color: white;
+     
+}

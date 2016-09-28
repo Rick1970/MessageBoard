@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Item - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model MessageBoard.Models.Post
+
+
+
+<h2 class="cool">Create</h2>
+<hr />
+<h4 class="cool">Add a new comment:</h4>
+
+@using (Html.BeginForm())
+{   <div class="form-group">
+        <div class="cool">
+            @Html.LabelFor(model => model.Response)
+        </div>
+        @Html.TextBoxFor(model => model.Response, new { @class = "form-control" })
+    </div>
+
+            <div class="form-group">
+                <div class="cool">
+                    @Html.LabelFor(model => model.Message)
+                </div>
+                @Html.TextBoxFor(model => model.Message, new { @class = "form-control" })
+                <br />
+                <br />
+                <input type="submit" value="Add new comment" />
+            </div>
+
+}
+
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

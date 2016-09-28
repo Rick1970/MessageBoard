@@ -29,10 +29,8 @@
                         <li>@Html.DisplayFor(modelComment => listComment.Response)</li>
                     }
                 </ul>
-
-                <p>@Html.ActionLink("Back to post", "Index")</p>
-                <div class="col-md-6">
-
+               <a href="../../comments/Create">Click here to comment on a post</a><br />
+               @Html.ActionLink("Back to Post", "index")
                 </div>
         </div>
 </body>

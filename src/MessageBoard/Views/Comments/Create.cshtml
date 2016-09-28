@@ -1,0 +1,21 @@
+﻿@model MessageBoard.Models.Comment
+
+@{
+    ViewData["Title"] = "Item - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Make a comment.</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Response)
+    @Html.EditorFor(model => model.Response)
+
+    @Html.LabelFor(model => model.PostId)
+    @Html.DropDownList("PostId")
+
+    <input type="submit" value="Create" class="btn btn-default" />
+}
+
+<a href="../../posts">Click here to return to posts.</a>

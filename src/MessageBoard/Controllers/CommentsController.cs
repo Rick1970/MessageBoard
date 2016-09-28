@@ -19,19 +19,18 @@ namespace MessageBoard.Controllers
         }
         public IActionResult Details(int id)
         {
-            //var thisComment = db.Comments.FirstOrDefault(comments => comments.CommentId == id);
+           
             return View(db.Comments.Include(comments => comments.Post).ToList());
-            //return View(thisComment);
+           
 
         }
-        public IActionResult Create()
+        public ActionResult Create()
         {
-            ViewBag.PostsId = new SelectList(db.Posts, "PostId", "Response");
+            ViewBag.PostId = new SelectList(db.Posts, "PostId", "Title");
             return View();
         }
-
         [HttpPost]
-        public IActionResult Create(Comment comment)
+        public ActionResult Create(Comment comment)
         {
             db.Comments.Add(comment);
             db.SaveChanges();

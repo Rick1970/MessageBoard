@@ -62,5 +62,16 @@ h1 {
 li {
      font-family: 'David Libre', serif;
      font-size: 2em;
+     color: white;
+}
+
+.form-group {
+    width: 50%;
+    
+}
+
+.cool {
+    margin-right: 10%;
+    color: white;
 }
 

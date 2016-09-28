@@ -8,7 +8,7 @@ namespace MessageBoard.Controllers
         IActionResult Create();
         IActionResult CreateComment();
         IActionResult Create(Post post);
-        IActionResult CreateComment(Comment comment);
+        IActionResult CreateComment(ViewModels.Comment comment);
         IActionResult Delete(int id);
         IActionResult DeleteComment(int id);
         IActionResult DeleteConfirmed(int id);

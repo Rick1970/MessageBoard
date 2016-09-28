@@ -1,11 +1,10 @@
-﻿using System;
+﻿using MessageBoard.Models;
+using MessageBoard.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MessageBoard.Models
+namespace MessageBoard.ViewModels
 {
     [Table("Comments")]
     public class Comment

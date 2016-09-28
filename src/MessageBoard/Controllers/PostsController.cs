@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MessageBoard.Models;
+using MessageBoard.ViewModels;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
+using MessageBoard.Models;
+using System.Threading.Tasks.Dataflow;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,19 +16,25 @@ namespace MessageBoard.Controllers
     {
         private MessageBoardDbContext db = new MessageBoardDbContext();
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
+           
             return View(db.Posts.Include(posts => posts.Comments).ToList());
+
         }
 
-       
+
         public IActionResult Details(int id)
         {
-           var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
-          
-           return View(thisPost);
-               
-           
+           //var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);
+            //return View(db.Posts.Include(posts => posts.Comments).Where(posts => posts.PostId == id).ToList());
+            //return View(thisPost.Comments);
+            var model = new PostsViewModel();
+            model.Posts = db.Posts.FirstOrDefault(post => post.PostId == id);
+            model.Comments = db.Comments.Include(comments => comments.Post).Where(posts => posts.PostId == id).ToList();
+            return View(model);
+
+
 
         }
         public IActionResult Create()

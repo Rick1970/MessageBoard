@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MessageBoard.Models;
+using MessageBoard.ViewModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MessageBoard.Models;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 

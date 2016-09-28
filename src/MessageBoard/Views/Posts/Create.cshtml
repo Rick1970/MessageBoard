@@ -8,16 +8,29 @@
 
     
     
-        <h2>Create</h2>
+        <h2 class="cool">Create</h2>
         <hr />
-        <h4>Add a new post:</h4>
-        @using (Html.BeginForm())
-        {
-            @Html.LabelFor(model => model.Title)
-            @Html.TextBoxFor(model => model.Title)
-            @Html.LabelFor(model => model.Message)
-            @Html.TextBoxFor(model => model.Message)
-            <input type="submit" value="Add new post" />
-        }
-        <p>@Html.ActionLink("Back to list", "Index")</p>
-  
+        <h4 class="cool">Add a new post:</h4>
+       
+    @using (Html.BeginForm())
+    {   <div class="form-group">
+            <div class="cool">
+                @Html.LabelFor(model => model.Title)
+            </div>
+                @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+            </div>
+           
+                <div class="form-group">
+                    <div class="cool">
+                        @Html.LabelFor(model => model.Message)
+                    </div>
+                    @Html.TextBoxFor(model => model.Message, new { @class = "form-control" })
+                    <br />
+                    <br />
+                    <input type="submit" value="Add new post" />
+                    </div>
+                
+                }
+
+
+    <p>@Html.ActionLink("Back to list", "Index")</p>

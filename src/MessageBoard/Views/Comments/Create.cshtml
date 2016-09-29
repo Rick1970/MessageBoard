@@ -18,7 +18,7 @@
         <div class="cool">
         @Html.LabelFor(model => model.PostId, "Choose a post to respond to:")
         </div>
-        @Html.DropDownList("PostId")
+       @Html.DropDownList("PostId")
         @Html.ValidationMessageFor(m => m.PostId)
        
         <input type="submit" value="Create" class="btn btn-default" />

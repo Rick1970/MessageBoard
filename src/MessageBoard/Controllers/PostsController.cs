@@ -36,9 +36,12 @@ namespace MessageBoard.Controllers
         [HttpPost]
         public IActionResult Create(Post post)
         {
-            db.Posts.Add(post);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid) {
+                db.Posts.Add(post);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
         public IActionResult Edit(int id)
         {

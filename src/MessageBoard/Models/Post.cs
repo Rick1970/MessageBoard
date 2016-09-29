@@ -14,7 +14,9 @@ namespace MessageBoard.Models
             }
         [Key]
         public int PostId { get; set; }
+        [Required]
         public string Title { get; set; }
+        [Required]
         public string Message { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
     }

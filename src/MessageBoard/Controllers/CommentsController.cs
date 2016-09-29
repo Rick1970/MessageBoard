@@ -32,9 +32,13 @@ namespace MessageBoard.Controllers
         [HttpPost]
         public ActionResult Create(Comment comment)
         {
-            db.Comments.Add(comment);
-            db.SaveChanges();
-            return RedirectToAction("../posts");
+            if (ModelState.IsValid)
+            {
+                db.Comments.Add(comment);
+                db.SaveChanges();
+                return RedirectToAction("../posts");
+            }
+            return View();
         }
         public IActionResult Edit(int id)
         {

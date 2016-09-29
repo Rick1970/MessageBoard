@@ -9,16 +9,18 @@
 
     @using (Html.BeginForm())
     {
+        //@Html.HiddenFor(model => model.PostId)
         <div class="cool">
             @Html.LabelFor(model => model.Response)
         </div>
         @Html.EditorFor(model => model.Response, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Response)
         <div class="cool">
-            @Html.LabelFor(model => model.PostId, "Choose a post to respond to:")
+        @Html.LabelFor(model => model.PostId, "Choose a post to respond to:")
         </div>
         @Html.DropDownList("PostId")
         @Html.ValidationMessageFor(m => m.PostId)
+       
         <input type="submit" value="Create" class="btn btn-default" />
     }
 </div>

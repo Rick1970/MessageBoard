@@ -9,9 +9,9 @@ namespace MessageBoard.Models
     public class Post
     {
         public Post()
-        { 
-        this.Comments = new HashSet<Comment>();
-            }
+        {
+            this.Comments = new HashSet<Comment>();
+        }
         [Key]
         public int PostId { get; set; }
         [Required]

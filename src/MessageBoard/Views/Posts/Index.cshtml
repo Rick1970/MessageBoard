@@ -12,8 +12,9 @@
 <ul>
     @foreach (var listItem in Model)
     {
-        <li>Title: @Html.DisplayFor(modelItem => listItem.Title)<br />Post:@Html.DisplayFor(modelItem => listItem.Message) @Html.DisplayFor(modelItem => listItem.Comments) <br />| @Html.ActionLink("Details", "Details", new { id = listItem.PostId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.PostId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.PostId })
-    </li>
+        <li>
+            Title: @Html.DisplayFor(modelItem => listItem.Title)<br />Post:@Html.DisplayFor(modelItem => listItem.Message) @Html.DisplayFor(modelItem => listItem.Comments) <br />| @Html.ActionLink("Details", "Details", new { id = listItem.PostId }) | @Html.ActionLink("Edit", "Edit", new { id = listItem.PostId }) | @Html.ActionLink("Delete", "Delete", new { id = listItem.PostId })
+        </li>
     }
 </ul>
 <p>@Html.ActionLink("Add a new post", "Create")</p>

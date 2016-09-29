@@ -1,6 +1,6 @@
 ﻿
 @model MessageBoard.ViewModels.PostsViewModel
-@{ 
+@{
     ViewData["Title"] = "Message Board";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -10,28 +10,28 @@
     <title>Post - Details</title>
 </head>
 <
-    <body>
-        
-        <h2 class="cool">Details</h2>
-        <hr />
-        <div class="row">
-            <div class="col-md-6">
-                <div class="cool2">
-                    @Html.DisplayNameFor(model => model.Posts.Title):<br /> @Html.DisplayFor(model => model.Posts.Title)
-                    <br />
+<body>
 
-                    @Html.DisplayNameFor(model => model.Posts.Message):<br /> @Html.DisplayFor(model => model.Posts.Message)
-                </div>
-                <h3 class="cool">Comments:</h3>
-                <ul>
-                    @foreach (var listComment in Model.Comments)
+    <h2 class="cool">Details</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="cool2">
+                @Html.DisplayNameFor(model => model.Posts.Title):<br /> @Html.DisplayFor(model => model.Posts.Title)
+                <br />
+
+                @Html.DisplayNameFor(model => model.Posts.Message):<br /> @Html.DisplayFor(model => model.Posts.Message)
+            </div>
+            <h3 class="cool">Comments:</h3>
+            <ul>
+                @foreach (var listComment in Model.Comments)
             {
-                        <li>@Html.DisplayFor(modelComment => listComment.Response)</li>
-                    }
-                </ul>
-               <a href="../../comments/Create">Click here to comment on a post</a><br />
-               @Html.ActionLink("Back to Post", "index")
-                </div>
+                    <li>@Html.DisplayFor(modelComment => listComment.Response)</li>
+                }
+            </ul>
+            <a href="../../comments/Create">Click here to comment on a post</a><br />
+            @Html.ActionLink("Back to Post", "index")
         </div>
+    </div>
 </body>
 </html>

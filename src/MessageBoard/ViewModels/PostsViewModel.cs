@@ -9,8 +9,8 @@ namespace MessageBoard.ViewModels
         public Post Posts { get; set; }
         public IEnumerable<Comment> Comments { get; set; }
 
-      
 
-       
+
+
     }
 }

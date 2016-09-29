@@ -38,7 +38,7 @@ namespace MessageBoard
                     template: "{controller=Home}/{action=index}/{id?}");
             });
 
-            
+
         }
     }
 }

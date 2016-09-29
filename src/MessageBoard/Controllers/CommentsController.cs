@@ -19,9 +19,9 @@ namespace MessageBoard.Controllers
         }
         public IActionResult Details(int id)
         {
-           
+
             return View(db.Comments.Include(comments => comments.Post).ToList());
-           
+
 
         }
         public ActionResult Create()

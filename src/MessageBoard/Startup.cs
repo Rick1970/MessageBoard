@@ -5,6 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using MessageBoard.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using BasicAuthentication.Models;
 
 namespace MessageBoard
 {
@@ -24,12 +27,16 @@ namespace MessageBoard
             services.AddEntityFramework()
                 .AddDbContext<MessageBoardDbContext>(options =>
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddIdentity<User, IdentityRole>()
+                    .AddEntityFrameworkStores<MessageBoardDbContext>();
         }
 
         public void Configure(IApplicationBuilder app)
         {
 
             app.UseStaticFiles();
+            app.UseFileServer();
+            app.UseIdentity();
 
             app.UseMvc(routes =>
             {

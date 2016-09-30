@@ -1,9 +1,11 @@
-﻿using MessageBoard.ViewModels;
+﻿using BasicAuthentication.Models;
+using MessageBoard.ViewModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace MessageBoard.Models
 {
-    public class MessageBoardDbContext : DbContext
+    public class MessageBoardDbContext : IdentityDbContext<User>
     {
 
         public MessageBoardDbContext(DbContextOptions<MessageBoardDbContext> options)

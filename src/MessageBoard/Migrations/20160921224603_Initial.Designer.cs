@@ -22,8 +22,6 @@ namespace MessageBoard.Migrations
                     b.Property<int>("CommentId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Author");
-
                     b.Property<int>("PostId");
 
                     b.Property<string>("Response");
@@ -40,7 +38,7 @@ namespace MessageBoard.Migrations
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Author");
+                    b.Property<string>("Title");
 
                     b.Property<string>("Message");
 

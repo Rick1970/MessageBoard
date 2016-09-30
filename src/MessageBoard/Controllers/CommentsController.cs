@@ -24,7 +24,7 @@ namespace MessageBoard.Controllers
 
 
         }
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             ViewBag.PostId = new SelectList(db.Posts, "PostId", "Title");
             return View();

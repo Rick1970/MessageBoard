@@ -25,5 +25,21 @@ namespace MessageBoard.Tests.ControllerTests
             //Assert
             Assert.IsType<ViewResult>(result);
         }
+
+
+        [Fact]
+        public void Get_ModelList_Index_Test()
+        {
+            //Arrange
+            PostsController controller = new PostsController();
+            IActionResult actionResult = controller.Index(1);
+            ViewResult indexView = controller.Index(1) as ViewResult;
+
+            //Act
+            var result = indexView.ViewData.Model;
+
+            //Assert
+            Assert.IsType<List<Post>>(result);
+        }
     }
 }

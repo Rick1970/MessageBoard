@@ -71,3 +71,25 @@ li {
     font-size: 2em;
     color: white;
 }
+
+.small {
+    font-family: 'David Libre', serif;
+    color: grey;
+}
+
+.btn-custom {
+  background-color: hsl(16, 14%, 11%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a9958d", endColorstr="#1f1a18");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#a9958d), to(#1f1a18));
+  background-image: -moz-linear-gradient(top, #a9958d, #1f1a18);
+  background-image: -ms-linear-gradient(top, #a9958d, #1f1a18);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a9958d), color-stop(100%, #1f1a18));
+  background-image: -webkit-linear-gradient(top, #a9958d, #1f1a18);
+  background-image: -o-linear-gradient(top, #a9958d, #1f1a18);
+  background-image: linear-gradient(#a9958d, #1f1a18);
+  border-color: #1f1a18 #1f1a18 hsl(16, 14%, -1.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.82);
+  -webkit-font-smoothing: antialiased;
+}

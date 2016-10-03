@@ -24,14 +24,14 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right navbar-custom">
                     <li><a href="#">Science</a></li>
                     <li><a href="/posts">Message Board</a></li>
                     <li>@if (User.Identity.IsAuthenticated)
                     {
-                     <span>@User.Identity.Name</span>@using (Html.BeginForm("LogOff", "Account"))
+                     <span class="small">@User.Identity.Name</span>@using (Html.BeginForm("LogOff", "Account"))
                      {
-                        <input type="submit" class="btn" value="Log out" />
+                        <input type="submit" class="btn-xs btn-custom" value="Log out" />
                      }
                     }
                     else

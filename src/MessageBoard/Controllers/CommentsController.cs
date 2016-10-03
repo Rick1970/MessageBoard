@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MessageBoard.Models;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -24,6 +25,7 @@ namespace MessageBoard.Controllers
 
 
         }
+        [Authorize]
         public ActionResult Create(int id)
         {
             ViewBag.PostId = new SelectList(db.Posts, "PostId", "Title");

@@ -33,7 +33,7 @@ namespace MessageBoard
 
         public void Configure(IApplicationBuilder app)
         {
-
+            app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseFileServer();
             app.UseIdentity();

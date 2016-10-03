@@ -29,6 +29,7 @@ namespace MessageBoard.Controllers
             model.Comments = db.Comments.Include(comments => comments.Post).Where(posts => posts.PostId == id).ToList();
             return View(model);
         }
+        
 
         public IActionResult Create()
         {
@@ -46,6 +47,7 @@ namespace MessageBoard.Controllers
             }
             return View();
         }
+        [Authorize]
         public IActionResult Edit(int id)
         {
             var thisPost = db.Posts.FirstOrDefault(items => items.PostId == id);
@@ -59,6 +61,7 @@ namespace MessageBoard.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        [Authorize]
         public IActionResult Delete(int id)
         {
             var thisPost = db.Posts.FirstOrDefault(posts => posts.PostId == id);

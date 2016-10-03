@@ -7,10 +7,15 @@ namespace MessageBoard.Models
     [Table("Posts")]
     public class Post
     {
+        private int v;
+        private string comments;
+
         public Post()
         {
             this.Comments = new HashSet<Comment>();
         }
+                
+       
         [Key]
         public int PostId { get; set; }
         [Required]

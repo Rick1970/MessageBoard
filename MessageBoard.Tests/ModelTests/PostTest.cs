@@ -13,6 +13,7 @@ namespace MessageBoard.Tests.ModelTests
             var post = new Post()
             { Title = "Test" };
 
+            //act
             var result = post.Title;
 
             //assert

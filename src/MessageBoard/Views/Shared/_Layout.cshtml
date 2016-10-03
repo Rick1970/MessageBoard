@@ -27,25 +27,27 @@
                 <ul class="nav navbar-nav navbar-right navbar-custom">
                     <li><a href="#">Science</a></li>
                     <li><a href="/posts">Message Board</a></li>
-                    <li>@if (User.Identity.IsAuthenticated)
+                    <li>
+                        @if (User.Identity.IsAuthenticated)
                     {
-                     <span class="small">@User.Identity.Name</span>@using (Html.BeginForm("LogOff", "Account"))
-                     {
-                        <input type="submit" class="btn-xs btn-custom" value="Log out" />
-                     }
+                        <span class="small">@User.Identity.Name</span>@using (Html.BeginForm("LogOff", "Account"))
+                        {
+                            <input type="submit" class="btn-xs btn-custom" value="Log out" />
+                        }
                     }
                     else
                     {
                         <a href="/account/login">Login</a>
-                    }</li>
+                    }
+                </li>
 
-                </ul>
+            </ul>
 
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-    <div>
-        @RenderBody()
-    </div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div>
+    @RenderBody()
+</div>
 </body>
 </html>

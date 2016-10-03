@@ -27,6 +27,18 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Science</a></li>
                     <li><a href="/posts">Message Board</a></li>
+                    <li>@if (User.Identity.IsAuthenticated)
+                    {
+                     <span>@User.Identity.Name</span>@using (Html.BeginForm("LogOff", "Account"))
+                     {
+                        <input type="submit" class="btn" value="Log out" />
+                     }
+                    }
+                    else
+                    {
+                        <a href="/account/login">Login</a>
+                    }</li>
+
                 </ul>
 
             </div><!-- /.navbar-collapse -->

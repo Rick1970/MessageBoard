@@ -17,7 +17,6 @@ namespace MessageBoard.Tests.ControllerTests
             //Arrange
             PostsController controller = new PostsController()
             {
-               
             };
 
             //Act

@@ -1,23 +1,27 @@
 ﻿@{
     ViewData["Title"] = "Log In";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 @using MessageBoard.ViewModels
 
 @model LoginViewModel
-
-<h2>Log in with your account</h2>
-<hr />
+<div class="cool2">
+    <h2>Log in with your account</h2>
+    <hr />
+</div>
 @using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Email)
+{   <div class="cool2">
+        @Html.LabelFor(m => m.Email)
+    </div>
     @Html.TextBoxFor(m => m.Email)
-
-    @Html.LabelFor(m => m.Password)
+    <div class="cool2">
+        @Html.LabelFor(m => m.Password)
+    </div>
     @Html.PasswordFor(m => m.Password)
 
     <input type="submit" value="Log in" class="btn btn-default" />
 }
-
-<h2>Don't have a log in? Register here:</h2>
+<div class="cool2">
+    <h2>Don't have a log in? Register here:</h2>
+</div>
 <p>@Html.ActionLink("Register", "Register")</p>

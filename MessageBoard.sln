@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MessageBoard", "src\MessageBoard\MessageBoard.xproj", "{25244D4F-BEB9-46EF-9E98-9C694B89BC61}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1CC04D74-3641-47D0-906F-4087C20FC244}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MessageBoard.Tests", "MessageBoard.Tests\MessageBoard.Tests.xproj", "{25830056-5FFB-49CA-8B12-D8C087B6A1AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{25244D4F-BEB9-46EF-9E98-9C694B89BC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{25244D4F-BEB9-46EF-9E98-9C694B89BC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{25244D4F-BEB9-46EF-9E98-9C694B89BC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25830056-5FFB-49CA-8B12-D8C087B6A1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25830056-5FFB-49CA-8B12-D8C087B6A1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25830056-5FFB-49CA-8B12-D8C087B6A1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25830056-5FFB-49CA-8B12-D8C087B6A1AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{25244D4F-BEB9-46EF-9E98-9C694B89BC61} = {43CF656F-CC28-4440-B425-65F20F488A44}
+		{25830056-5FFB-49CA-8B12-D8C087B6A1AE} = {1CC04D74-3641-47D0-906F-4087C20FC244}
 	EndGlobalSection
 EndGlobal

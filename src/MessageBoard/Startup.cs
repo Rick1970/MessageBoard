@@ -8,6 +8,7 @@ using MessageBoard.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using BasicAuthentication.Models;
+using Hangfire;
 
 namespace MessageBoard
 {
@@ -33,6 +34,7 @@ namespace MessageBoard
 
         public void Configure(IApplicationBuilder app)
         {
+            
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseFileServer();

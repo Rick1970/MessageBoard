@@ -9,8 +9,13 @@ h1 {
     font-size: 4em;
     text-align: center;
     font-family: 'David Libre', serif;
-    margin-top: 100px;
-    letter-spacing: .50em;
+    margin-top: 75px;
+    
+}
+
+h2{
+    color: white;
+
 }
 
 .ghost-button-full-color {
@@ -92,4 +97,12 @@ li {
   color: #fff !important;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.82);
   -webkit-font-smoothing: antialiased;
+}
+
+.start {
+    text-align: center;
+     background-image: url("https://j.gifs.com/jR1XWl.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
 }

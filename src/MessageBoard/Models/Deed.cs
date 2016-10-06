@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MessageBoard.Models
 {
-    public class Deeds
-    {
-        [Table("Deeds")]
+    [Table("Deeds")]
+          
         public class Deed
         {
             [Key]
@@ -15,4 +14,4 @@ namespace MessageBoard.Models
  
         }
     }
-}
+

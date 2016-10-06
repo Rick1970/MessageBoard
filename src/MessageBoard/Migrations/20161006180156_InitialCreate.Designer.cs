@@ -8,8 +8,8 @@ using MessageBoard.Models;
 namespace MessageBoard.Migrations
 {
     [DbContext(typeof(MessageBoardDbContext))]
-    [Migration("20161006170119__newEntity")]
-    partial class _newEntity
+    [Migration("20161006180156_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

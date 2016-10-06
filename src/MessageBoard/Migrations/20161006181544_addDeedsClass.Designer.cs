@@ -8,8 +8,8 @@ using MessageBoard.Models;
 namespace MessageBoard.Migrations
 {
     [DbContext(typeof(MessageBoardDbContext))]
-    [Migration("20161006163736_v3")]
-    partial class v3
+    [Migration("20161006181544_addDeedsClass")]
+    partial class addDeedsClass
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -81,6 +81,19 @@ namespace MessageBoard.Migrations
                     b.HasIndex("PostId");
 
                     b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("MessageBoard.Models.Deed", b =>
+                {
+                    b.Property<int>("DeedId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Text")
+                        .IsRequired();
+
+                    b.HasKey("DeedId");
+
+                    b.ToTable("Deeds");
                 });
 
             modelBuilder.Entity("MessageBoard.Models.Post", b =>

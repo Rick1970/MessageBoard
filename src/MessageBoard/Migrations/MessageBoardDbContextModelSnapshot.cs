@@ -82,6 +82,19 @@ namespace MessageBoard.Migrations
                     b.ToTable("Comments");
                 });
 
+            modelBuilder.Entity("MessageBoard.Models.Deed", b =>
+                {
+                    b.Property<int>("DeedId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Text")
+                        .IsRequired();
+
+                    b.HasKey("DeedId");
+
+                    b.ToTable("Deeds");
+                });
+
             modelBuilder.Entity("MessageBoard.Models.Post", b =>
                 {
                     b.Property<int>("PostId")

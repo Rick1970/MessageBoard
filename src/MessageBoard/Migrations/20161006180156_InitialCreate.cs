@@ -5,18 +5,10 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace MessageBoard.Migrations
 {
-    public partial class v2 : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Author",
-                table: "Posts");
-
-            migrationBuilder.DropColumn(
-                name: "Author",
-                table: "Comments");
-
             migrationBuilder.CreateTable(
                 name: "AspNetUsers",
                 columns: table => new
@@ -40,6 +32,20 @@ namespace MessageBoard.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Posts",
+                columns: table => new
+                {
+                    PostId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Message = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Posts", x => x.PostId);
                 });
 
             migrationBuilder.CreateTable(
@@ -112,6 +118,26 @@ namespace MessageBoard.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Comments",
+                columns: table => new
+                {
+                    CommentId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    PostId = table.Column<int>(nullable: false),
+                    Response = table.Column<string>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Comments", x => x.CommentId);
+                    table.ForeignKey(
+                        name: "FK_Comments_Posts_PostId",
+                        column: x => x.PostId,
+                        principalTable: "Posts",
+                        principalColumn: "PostId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -156,22 +182,6 @@ namespace MessageBoard.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.AddColumn<string>(
-                name: "Title",
-                table: "Posts",
-                nullable: false,
-                defaultValue: "");
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Message",
-                table: "Posts",
-                nullable: false);
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Response",
-                table: "Comments",
-                nullable: false);
-
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AspNetUsers",
@@ -182,6 +192,11 @@ namespace MessageBoard.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Comments_PostId",
+                table: "Comments",
+                column: "PostId");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -216,9 +231,8 @@ namespace MessageBoard.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropColumn(
-                name: "Title",
-                table: "Posts");
+            migrationBuilder.DropTable(
+                name: "Comments");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
@@ -236,30 +250,13 @@ namespace MessageBoard.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Posts");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
-
-            migrationBuilder.AddColumn<string>(
-                name: "Author",
-                table: "Posts",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "Author",
-                table: "Comments",
-                nullable: true);
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Message",
-                table: "Posts",
-                nullable: true);
-
-            migrationBuilder.AlterColumn<string>(
-                name: "Response",
-                table: "Comments",
-                nullable: true);
         }
     }
 }

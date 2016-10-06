@@ -3,6 +3,32 @@
 
 }
 
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('.display-random-database-item').submit(function (event) {
+            event.preventDefault();
+            alert("Test");
+            $.ajax({
+
+                url: '@Url.Action("RandomDeedSelector")',
+                type: 'GET',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function (result) {
+                    var stringResult = '<ul>';
+                    for (var i = 0; i < result.length; i++) {
+                        stringResult += '<li>' + result[i].text + '</li>';
+                    }
+                    stringResult += '</ul>';
+                    $('#result1').html(stringResult);
+                    alert("Test");
+                }
+            });
+        });
+
+    });
+</script>
 
 
 
@@ -24,8 +50,19 @@
 
 
 <div class="hidden5">
-    
+    <h2>Using a form to make a GET request for a random deed.</h2>
+    <form action="RandomDeedSelector" class="display-random-database-item">
+        <label for="count">How many deeds would you like to see?</label>
+        <input type="number" name="count" />
+        <button type="submit">Submit</button>
+    </form>
+    <div id="result1">
+
+
+    </div>
+    ...
+
 </div>
 
 
-    
+

@@ -20,6 +20,7 @@ namespace MessageBoard.Controllers
         }
         public IActionResult RandomDeedSelector(int count)
         {
+            count = 1;
             var randomDeed = db.Deeds.OrderBy(r => Guid.NewGuid()).Take(count);
             return Json(randomDeed);
         }

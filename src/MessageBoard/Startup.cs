@@ -5,10 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using MessageBoard.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using BasicAuthentication.Models;
-using Hangfire;
 
 namespace MessageBoard
 {

@@ -1,11 +1,13 @@
-﻿{
+{
   "version": "1.0.0-*",
   "testRunner": "xunit",
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "xunit": "2.1.0",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
-    "MessageBoard": "1.0.0-*"
+    "MessageBoard": "1.0.0-*",
+    "Hangfire": "1.6.5",
+    "Hangfire.SqlServer": "1.6.5"
   },
 
   "frameworks": {

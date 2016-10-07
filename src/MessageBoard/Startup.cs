@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using MessageBoard.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using BasicAuthentication.Models;
+using Hangfire;
 
 namespace MessageBoard
 {
@@ -19,7 +20,13 @@ namespace MessageBoard
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
+           
+
+
+
+
         }
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -28,6 +35,8 @@ namespace MessageBoard
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<MessageBoardDbContext>();
+            services.AddHangfire(x => x.UseSqlServerStorage(Configuration["ConnectionStrings:HangfireDb"]));
+            
         }
 
         public void Configure(IApplicationBuilder app)
@@ -37,6 +46,8 @@ namespace MessageBoard
             app.UseStaticFiles();
             app.UseFileServer();
             app.UseIdentity();
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
 
             app.UseMvc(routes =>
             {

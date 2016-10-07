@@ -8,6 +8,9 @@ using MessageBoard.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using BasicAuthentication.Models;
 using Hangfire;
+using System;
+using System.Diagnostics;
+using MessageBoard.Controllers;
 
 namespace MessageBoard
 {
@@ -20,11 +23,7 @@ namespace MessageBoard
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json");
             Configuration = builder.Build();
-           
-
-
-
-
+       
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -48,6 +47,14 @@ namespace MessageBoard
             app.UseIdentity();
             app.UseHangfireDashboard();
             app.UseHangfireServer();
+           
+            RecurringJob.AddOrUpdate(
+                () => Debug.WriteLine("Minutely Job"), Cron.Minutely);
+
+            
+
+           
+
 
             app.UseMvc(routes =>
             {
@@ -58,5 +65,7 @@ namespace MessageBoard
 
 
         }
+
+       
     }
 }

@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using MessageBoard.Models;
 using Microsoft.AspNetCore.Authorization;
 using System;
+using Hangfire;
+using Hangfire.Common;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,6 +18,7 @@ namespace MessageBoard.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+
             return View();
         }
         public IActionResult RandomDeedSelector(int count)
@@ -23,6 +26,10 @@ namespace MessageBoard.Controllers
             count = 1;
             var randomDeed = db.Deeds.OrderBy(r => Guid.NewGuid()).Take(count);
             return Json(randomDeed);
+
+
         }
+
+
     }
 }

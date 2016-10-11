@@ -6,24 +6,32 @@
 @using MessageBoard.ViewModels
 
 @model RegisterViewModel
+
+
+<div>@Html.ValidationSummary()</div>
+
 <div class="cool2">
     <h2>Register a new user</h2>
     <hr />
 </div>
 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+
+     
 {
     <div class="cool2">
         @Html.LabelFor(m => m.Email)
     </div>
             @Html.TextBoxFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
             <div class="cool2">
                 @Html.LabelFor(m => m.PassWord)
             </div>
             @Html.PasswordFor(m => m.PassWord)
+            @Html.ValidationMessageFor(m => m.PassWord)
             <div class="cool2">
                 @Html.LabelFor(m => m.ConfirmPassword)
             </div>
             @Html.PasswordFor(m => m.ConfirmPassword)
-
+            @Html.ValidationMessageFor(m => m.PassWord)
             <input type="submit" value="Register" />
 }

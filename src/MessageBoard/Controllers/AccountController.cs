@@ -29,21 +29,25 @@ namespace MessageBoard.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-
-            var user = new User { UserName = model.Email };
-            IdentityResult result = await _userManager.CreateAsync(user, model.PassWord);
-            if (result.Succeeded)
+            if (ModelState.IsValid)
             {
-                await _signInManager.SignInAsync(user, false);
-                return RedirectToAction("../posts");
-            }
-
-            else
-            {
-                foreach (var error in result.Errors)
+                var user = new User { UserName = model.Email };
+                IdentityResult result = await _userManager.CreateAsync(user, model.PassWord);
+                if (result.Succeeded)
                 {
-                    ModelState.AddModelError("", error.Description);
+                    await _signInManager.SignInAsync(user, false);
+                    return RedirectToAction("../posts");
                 }
+
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
+
+                return View();
             }
 
             return View();

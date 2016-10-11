@@ -80,6 +80,7 @@ li {
 .small {
     font-family: 'David Libre', serif;
     color: grey;
+    font: 100px;
 }
 
 .btn-custom {
@@ -131,4 +132,13 @@ li {
     display: none;
 }
 
+p{
+    color: white;
+}
+
+.sides {
+    margin: 5px 15px 5px 15px;
+    font-size: 1.5em;
+    font-family:'David Libre', serif;
+}
 

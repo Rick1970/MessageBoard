@@ -36,7 +36,7 @@ namespace MessageBoard.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, false);
-                    return RedirectToAction("../posts");
+                    return RedirectToAction("../Deeds/index");
                 }
 
                 else
@@ -65,7 +65,7 @@ namespace MessageBoard.Controllers
                 Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("../home");
+                    return RedirectToAction("../posts");
                 }
                 else
                 {
@@ -79,7 +79,7 @@ namespace MessageBoard.Controllers
         public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("../home");
+            return RedirectToAction("../Deeds/index");
         }
     }
 }

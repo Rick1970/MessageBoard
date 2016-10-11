@@ -25,8 +25,7 @@
     "Microsoft.AspNetCore.Mvc.TagHelpers": "1.0.1",
     "Hangfire.Core": "1.6.5",
     "Hangfire": "1.6.5",
-    "Hangfire.SqlServer": "1.6.5"
-  },
+    "Hangfire.SqlServer": "1.6.5" },
 
   "tools": {
     "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final",

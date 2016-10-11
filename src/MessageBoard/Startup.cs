@@ -12,6 +12,8 @@ using System;
 using System.Diagnostics;
 using MessageBoard.Controllers;
 
+
+
 namespace MessageBoard
 {
     public class Startup
@@ -34,6 +36,7 @@ namespace MessageBoard
                     options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddIdentity<User, IdentityRole>()
                     .AddEntityFrameworkStores<MessageBoardDbContext>();
+           
             services.AddHangfire(x => x.UseSqlServerStorage(Configuration["ConnectionStrings:HangfireDb"]));
             
         }
@@ -49,11 +52,11 @@ namespace MessageBoard
             app.UseHangfireServer();
            
             RecurringJob.AddOrUpdate(
-                () => Debug.WriteLine("Minutely Job"), Cron.Minutely);
+                () => Console.WriteLine("Test"), Cron.Minutely);
+
+    
 
             
-
-           
 
 
             app.UseMvc(routes =>
@@ -62,10 +65,8 @@ namespace MessageBoard
                     name: "default",
                     template: "{controller=Home}/{action=index}/{id?}");
             });
-
-
         }
 
-       
+   
     }
 }

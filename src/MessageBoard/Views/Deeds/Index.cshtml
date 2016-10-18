@@ -32,6 +32,34 @@
     });
 </script>
 
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        setInterval(function () {
+
+
+            $.ajax({
+
+                url: "https://healthruwords.p.mashape.com/v1/quotes/?maxR=1&size=medium&t=Compassion",
+                headers: {"X-Mashape-Key": "Esxwj8BloqmshFOoZ9PVKWyJWiaXp1k3RkCjsniZTL58yEyCvr",  "Accept": "application/json"},                            type: 'GET',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function (result) {
+                var stringResult = '<ul>';
+                for (var i = 0; i < result.length; i++) {
+                    stringResult += '<li>' + result[i].author + '</li>';
+                }
+                stringResult += '</ul>';
+                $('#result2').html(stringResult);
+
+            }
+        });
+    }, 30000);
+
+    });
+</script>
+
+
 
 
 <div class="hidden1">
@@ -73,18 +101,27 @@
         <p>Each morning when you start your day, I want you to think about helping someone else with the idea that you are going to make their day better.  Just set that intention in your mind.  “What’s the point of that”, you ask?  Everything that we as human beings create in this world starts as an intention.  From the building of the Space Needle to a manned mission to the moon, to the cell phone in our hand.  All these things started as an idea; an intention.  But the intention by itself is not enough.  “The road to hell is paved with good intentions”, or so they say. You can think all day long, about making a difference; but until you perform some action; the intent is meaningless.</p>
         <br />
         <h2>Let’s talk about action.</h2>
-        <p>First off, it doesn’t have to be financial.  Money is great, and if you feel so inclined; use it!  But what to do when you don’t have the money?  How about holding the door for a stranger, or giving your seat up on the bus to someone else, or letting someone in while stopped in traffic.  The opportunities to bring good into the world through your intention and your actions; simple actions; are truly limitless.
-          If you have some resources; how about sharing them?  Maybe at the coffee stand, you give the barista ten bucks to pay for the next couple of people.  These actions; these drops; can change the world!
-        So set your intention to perform a good deed; a service to someone else.  And then when you see the chance during the day, follow through.</p>
+        <p>
+            First off, it doesn’t have to be financial.  Money is great, and if you feel so inclined; use it!  But what to do when you don’t have the money?  How about holding the door for a stranger, or giving your seat up on the bus to someone else, or letting someone in while stopped in traffic.  The opportunities to bring good into the world through your intention and your actions; simple actions; are truly limitless.
+            If you have some resources; how about sharing them?  Maybe at the coffee stand, you give the barista ten bucks to pay for the next couple of people.  These actions; these drops; can change the world!
+            So set your intention to perform a good deed; a service to someone else.  And then when you see the chance during the day, follow through.
+        </p>
         <br />
-            <h2>Let’s make it rain!!</h2>
+        <h2>Let’s make it rain!!</h2>
         <br />
 
-            <h2>Like some help?</h2>
-        <p>Each day this website will offer a new simple suggestion for a good deed.  If you are interested, sign up for our intention/action good deed reminder.  Each day you will receive an email with the day's good deed idea.  Come join us.  Let’s change the world for the better!!</p>
+        <h2>Like some help?</h2>
+
+        <p>Each day this website will offer a new simple suggestion for a good deed.  If you are interested, sign up for our intention/action good deed reminder. Come join us.  Let’s change the world for the better!!</p>
+        <a href="http://eepurl.com/ckwooQ">Click here to sign up for the daily reminder email.</a>
+
+
 
         <p>Using Ajax to make a GET request for a random deed.</p>
         <div id="result1"> </div>
+
+        <p>Api call for random inspirational quote.</p>
+        <div id="result2"></div>
 
 
 

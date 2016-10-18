@@ -40,14 +40,15 @@
 
             $.ajax({
 
-                url: "https://healthruwords.p.mashape.com/v1/quotes/?maxR=1&size=medium&t=Compassion",
+                url: "https://healthruwords.p.mashape.com/v1/quotes/?maxR=1&size=medium&=Compassion",
                 headers: {"X-Mashape-Key": "Esxwj8BloqmshFOoZ9PVKWyJWiaXp1k3RkCjsniZTL58yEyCvr",  "Accept": "application/json"},                            type: 'GET',
             data: $(this).serialize(),
             dataType: 'json',
             success: function (result) {
                 var stringResult = '<ul>';
                 for (var i = 0; i < result.length; i++) {
-                    stringResult += '<li>' + result[i].author + '</li>';
+                    stringResult += '<li>' + result[i].author + result[i].title + '<img src= "result[i].media">' + '</li>';
+                    
                 }
                 stringResult += '</ul>';
                 $('#result2').html(stringResult);

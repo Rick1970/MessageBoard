@@ -12,19 +12,13 @@ using Newtonsoft;
 
 namespace MessageBoard.Controllers
 {
-    public class QuoteController : Controller
+    public class QuotesController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult RandomQuote()
-        {
-            return View();
-
-
-        }
+              
     }
 }

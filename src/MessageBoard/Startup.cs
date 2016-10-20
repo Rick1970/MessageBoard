@@ -54,9 +54,12 @@ namespace MessageBoard
             RecurringJob.AddOrUpdate(
                 () => Console.WriteLine("Test"), Cron.Minutely);
 
-    
+            RecurringJob.AddOrUpdate(
+               () => Debug.WriteLine("Test"), Cron.Minutely);
 
-            
+
+
+
 
 
             app.UseMvc(routes =>

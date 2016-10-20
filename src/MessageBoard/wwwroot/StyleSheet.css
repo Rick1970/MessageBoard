@@ -12,12 +12,10 @@ h1 {
     text-align: center;
     font-family: 'David Libre', serif;
     margin-top: 75px;
-    
 }
 
-h2{
+h2 {
     color: white;
-
 }
 
 .ghost-button-full-color {
@@ -86,62 +84,71 @@ li {
 }
 
 .btn-custom {
-  background-color: hsl(16, 14%, 11%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a9958d", endColorstr="#1f1a18");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#a9958d), to(#1f1a18));
-  background-image: -moz-linear-gradient(top, #a9958d, #1f1a18);
-  background-image: -ms-linear-gradient(top, #a9958d, #1f1a18);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a9958d), color-stop(100%, #1f1a18));
-  background-image: -webkit-linear-gradient(top, #a9958d, #1f1a18);
-  background-image: -o-linear-gradient(top, #a9958d, #1f1a18);
-  background-image: linear-gradient(#a9958d, #1f1a18);
-  border-color: #1f1a18 #1f1a18 hsl(16, 14%, -1.5%);
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.82);
-  -webkit-font-smoothing: antialiased;
+    background-color: hsl(16, 14%, 11%) !important;
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a9958d", endColorstr="#1f1a18");
+    background-image: -khtml-gradient(linear, left top, left bottom, from(#a9958d), to(#1f1a18));
+    background-image: -moz-linear-gradient(top, #a9958d, #1f1a18);
+    background-image: -ms-linear-gradient(top, #a9958d, #1f1a18);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a9958d), color-stop(100%, #1f1a18));
+    background-image: -webkit-linear-gradient(top, #a9958d, #1f1a18);
+    background-image: -o-linear-gradient(top, #a9958d, #1f1a18);
+    background-image: linear-gradient(#a9958d, #1f1a18);
+    border-color: #1f1a18 #1f1a18 hsl(16, 14%, -1.5%);
+    color: #fff !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.82);
+    -webkit-font-smoothing: antialiased;
 }
 
 .start {
     text-align: center;
-     background-image: url("https://j.gifs.com/jR1XWl.gif");
+    background-image: url("https://j.gifs.com/jR1XWl.gif");
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 
-.hidden1
-{
+.hidden1 {
     display: none;
 }
 
-.hidden2
-{
+.hidden2 {
     display: none;
 }
 
-.hidden3
-{
-    display: none;
-}
-.hidden4
-{
+.hidden3 {
     display: none;
 }
 
-.hidden5
-{
+.hidden4 {
     display: none;
 }
 
-p{
+.hidden5 {
+    display: none;
+}
+
+p {
     color: white;
 }
 
 .sides {
     margin: 5px 15px 5px 15px;
     font-size: 1.5em;
-    font-family:'David Libre', serif;
+    font-family: 'David Libre', serif;
 }
 
+#result1, #result2 {
+    text-align: center;
+    font: 4em;
+}
 
+#center {
+    text-align: center;
+    font:2em;
+}
+
+#format {
+    text-align: center;
+    font: 1.5em;
+}

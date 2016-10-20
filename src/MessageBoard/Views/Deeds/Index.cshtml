@@ -12,7 +12,6 @@
 
 
             $.ajax({
-
                 url: '@Url.Action("RandomDeedSelector")',
                 type: 'GET',
                 data: $(this).serialize(),
@@ -24,7 +23,6 @@
                     }
                     stringResult += '</ul>';
                     $('#result1').html(stringResult);
-
                 }
             });
         }, 30000);
@@ -36,27 +34,24 @@
 
     $(document).ready(function () {
         setInterval(function () {
-
-
             $.ajax({
-
                 url: "https://healthruwords.p.mashape.com/v1/quotes/?maxR=1&size=medium&=Compassion",
-                headers: {"X-Mashape-Key": "Esxwj8BloqmshFOoZ9PVKWyJWiaXp1k3RkCjsniZTL58yEyCvr",  "Accept": "application/json"},                            type: 'GET',
-            data: $(this).serialize(),
-            dataType: 'json',
-            success: function (result) {
-                var stringResult = '<ul>';
-                for (var i = 0; i < result.length; i++) {
-                    stringResult += '<li>' + result[i].author + result[i].title + '<img src= "result[i].media">' + '</li>';
-                    
+                headers: { "X-Mashape-Key": "Esxwj8BloqmshFOoZ9PVKWyJWiaXp1k3RkCjsniZTL58yEyCvr", "Accept": "application/json" }, type: 'GET',
+                data: $(this).serialize(),
+                dataType: 'json',
+                success: function (result) {
+
+                    var stringResult = '<ul>';
+                    for (var i = 0; i < result.length; i++) {
+                        stringResult += '<li>' + "Author:" + result[i].author + "<br/>" + result[i].title + "<br />" + '<img src="result[i].media">' + '</li>';
+                        
+                        
+                    }
+                    stringResult += '</ul>';
+                    $('#result2').html(stringResult);
                 }
-                stringResult += '</ul>';
-                $('#result2').html(stringResult);
-
-            }
-        });
-    }, 30000);
-
+            });
+        }, 30000);
     });
 </script>
 
@@ -65,15 +60,21 @@
 
 
 
-        <p>Using Ajax to make a GET request for a random deed.</p>
-        <div id="result1"> </div>
+<h1>Todays random good deed idea is:</h1>
+<div id="result1"> </div>
 
-        <p>Api call for random inspirational quote.</p>
-        <div id="result2"></div>
+<h1>Todays inspirational quote is:</h1>
+<div id="result2"></div>
+<div id="result3"></div>
+
+<br />
+<br />
+
+<p id="center"><a href="http://eepurl.com/ckwooQ">Click here to sign up for the daily reminder email.</a></p>
 
 
 
 
 
-   
+
 
